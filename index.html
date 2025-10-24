@@ -1,36 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio SMS</title>
-
-    <link rel="stylesheet" href="css/style.css"/>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <meta charset="utf-8" />
+  <title>Faisal — Portfolio</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
+<body class="font-sans bg-slate-50">
 
-<body>
+  <header id="navBar" class="hidden bg-cyan-500 text-white p-4">
+    <div class="flex justify-between items-center">
+      <div class="flex items-center gap-2">
+        <img src="images/logo.png" class="h-8 w-8 rounded" />
+        <span class="font-bold">Faisal</span>
+      </div>
+      <nav class="hidden md:flex gap-4">
+        <a href="#" data-nav="home">Home</a>
+        <a href="#" data-nav="profile">Profile</a>
+        <a href="#" data-nav="message">Message Me</a>
+      </nav>
+      <button id="burger" class="md:hidden">☰</button>
+    </div>
+    <div id="mobileMenu" class="hidden flex-col gap-2 mt-2 md:hidden">
+      <a href="#" data-nav="home">Home</a>
+      <a href="#" data-nav="profile">Profile</a>
+      <a href="#" data-nav="message">Message Me</a>
+    </div>
+  </header>
 
-    <header class="main">
+  <section id="askName" class="min-h-screen flex flex-col items-center justify-center">
+    <p>Please enter your name:</p>
+    <input id="txtName" class="border p-2" />
+    <button id="setNameBtn" class="bg-cyan-500 text-white px-4 py-2 mt-2">Set Name</button>
+  </section>
 
-        <div class="main-logo">
-            <img src="https://picsum.photos/200/300" height="75px" width="75px" style="border-radius: 75%; background-size: cover;"/>
-        </div>
-         
-        <nav class="flex">
-            <a class="border rounded y-2" href="#">Home</a>
-            <a class="border rounded y-2"href="#">Our Profile</a>
-            <a class="border rounded y-2"href="#">Portfolio</a>
-            <a class="border rounded y-2"href="#">Message Us</a>
-        </nav>
+  <section id="home" class="hidden p-6 text-center">
+    <h1 class="text-3xl">Hi, <span id="greetingName">Guest</span> 👋</h1>
+    <p class="mt-2">
+      My name is Faisal, I work as a System Integrator, making sure hardware and software work together. 
+      I’m now getting my feet wet on Full‑Stack Development to grow my career and help my company to develop their own SCADA on the basis of web.
+    </p>
+    <p class="mt-2">
+      Currently, I’m learning <b>HTML</b> and strengthening my front‑end skills while also exploring back‑end tools.
+    </p>
+    <div class="mt-4">
+      <button data-nav="profile" class="bg-cyan-500 text-white px-4 py-2 m-2">View Profile</button>
+      <button data-nav="message" class="border px-4 py-2 m-2">Message Me</button>
+    </div>
+  </section>
 
-    </header>
+  <section id="profile" class="hidden p-6">
+    <h2 class="text-2xl font-bold">About Faisal</h2>
+    <p class="mt-2">
+      I started my career as a System Integrator, where I connected hardware, software, and networks 
+      to deliver improved systems. This gave me strong problem‑solving skills and a 
+      big‑picture view of how systems work together.
+    </p>
+    <p class="mt-2">
+      To advance my career, I’m now trying to get into <b>Full‑Stack Development</b>. I want to design and build 
+      applications end‑to‑end — from the user interface to the database and everything in between.
+    </p>
 
-    <main></main>
+    <h3 class="font-semibold mt-4">Skills</h3>
+    <ul class="list-disc ml-6">
+      <li>System Integration (hardware, software, networking)</li>
+      <li>HTML (currently learning), CSS, JavaScript basics</li>
+      <li>Interest in Node.js and SQL</li>
+    </ul>
 
-    <footer></footer>
+    <h3 class="font-semibold mt-4">Goals</h3>
+    <ul class="list-disc ml-6">
+      <li>Master front‑end development (HTML, CSS, JavaScript)</li>
+      <li>Learn back‑end frameworks (Node.js)</li>
+      <li>Build full‑stack projects to showcase my skills and create new product for my company</li>
+    </ul>
+  </section>
 
-    <script src="js/script.js"></script>
+  <section id="message" class="hidden p-6">
+    <h2 class="text-2xl font-bold">Message Me</h2>
+    <form id="messageForm" class="space-y-2">
+      <input id="name" placeholder="Name" class="border p-2 w-full" />
+      <input id="email" placeholder="Email" class="border p-2 w-full" />
+      <textarea id="msg" placeholder="Message" class="border p-2 w-full"></textarea>
+      <button id="submitBtn" class="bg-cyan-500 text-white px-4 py-2">Send</button>
+    </form>
+    <div id="outputBox" class="hidden mt-4 border p-2">
+      <p><b>Name:</b> <span id="outName">-</span></p>
+      <p><b>Email:</b> <span id="outEmail">-</span></p>
+      <p><b>Message:</b> <span id="outMsg">-</span></p>
+    </div>
+  </section>
 
+  <footer id="footer" class="hidden text-center p-4 text-sm text-slate-600">
+    Faisal
+  </footer>
+
+  <script src="js/script.js"></script>
 </body>
 </html>
