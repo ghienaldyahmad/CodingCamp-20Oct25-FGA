@@ -20,7 +20,18 @@ document.querySelectorAll("[data-nav]").forEach(link => {
     const target = link.getAttribute("data-nav");
     if (target === "home") showSection("home");
     if (target === "profile") showSection("profile");
-    if (target === "message") showSection("message");
+    document.getElementById("mobileMenu").classList.add("hidden");
+  };
+});
+
+// NEW: handle Message Me links (anchors with href="#message")
+document.querySelectorAll('a[href="#message"]').forEach(link => {
+  link.onclick = e => {
+    e.preventDefault();
+    showSection("home"); 
+    setTimeout(() => {
+      document.getElementById("message").scrollIntoView({ behavior: "smooth" });
+    }, 50);
     document.getElementById("mobileMenu").classList.add("hidden");
   };
 });

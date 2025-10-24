@@ -16,14 +16,14 @@
       <nav class="hidden md:flex gap-4">
         <a href="#" data-nav="home">Home</a>
         <a href="#" data-nav="profile">Profile</a>
-        <a href="#" data-nav="message">Message Me</a>
+        <a href="#message">Message Me</a>
       </nav>
       <button id="burger" class="md:hidden">☰</button>
     </div>
     <div id="mobileMenu" class="hidden flex-col gap-2 mt-2 md:hidden">
       <a href="#" data-nav="home">Home</a>
       <a href="#" data-nav="profile">Profile</a>
-      <a href="#" data-nav="message">Message Me</a>
+      <a href="#message">Message Me</a>
     </div>
   </header>
 
@@ -40,11 +40,28 @@
       I’m now getting my feet wet on Full‑Stack Development to grow my career and help my company to develop their own SCADA on the basis of web.
     </p>
     <p class="mt-2">
-      Currently, I’m learning <b>HTML</b> and strengthening my front‑end skills while also exploring back‑end tools.
+      Currently, I’m learning HTML and strengthening my front‑end skills while also exploring back‑end tools.
     </p>
     <div class="mt-4">
       <button data-nav="profile" class="bg-cyan-500 text-white px-4 py-2 m-2">View Profile</button>
-      <button data-nav="message" class="border px-4 py-2 m-2">Message Me</button>
+      <a href="#message" class="border px-4 py-2 m-2 inline-block">Message Me</a>
+    </div>
+
+    <hr class="my-8 border-slate-300">
+
+    <div id="message" class="text-left max-w-xl mx-auto">
+      <h2 class="text-2xl font-bold mb-4">Message Me</h2>
+      <form id="messageForm" class="space-y-2">
+        <input id="name" placeholder="Name" class="border p-2 w-full" />
+        <input id="email" placeholder="Email" class="border p-2 w-full" />
+        <textarea id="msg" placeholder="Message" class="border p-2 w-full"></textarea>
+        <button id="submitBtn" class="bg-cyan-500 text-white px-4 py-2">Send</button>
+      </form>
+      <div id="outputBox" class="hidden mt-4 border p-2">
+        <p><b>Name:</b> <span id="outName">-</span></p>
+        <p><b>Email:</b> <span id="outEmail">-</span></p>
+        <p><b>Message:</b> <span id="outMsg">-</span></p>
+      </div>
     </div>
   </section>
 
@@ -52,11 +69,11 @@
     <h2 class="text-2xl font-bold">About Faisal</h2>
     <p class="mt-2">
       I started my career as a System Integrator, where I connected hardware, software, and networks 
-      to deliver improved systems. This gave me strong problem‑solving skills and a 
+      to deliver improved systems. This gave me problem‑solving skills and a 
       big‑picture view of how systems work together.
     </p>
     <p class="mt-2">
-      To advance my career, I’m now trying to get into <b>Full‑Stack Development</b>. I want to design and build 
+      To advance my career, I’m now trying to get into Full‑Stack Development. I want to design and build 
       applications end‑to‑end — from the user interface to the database and everything in between.
     </p>
 
@@ -73,21 +90,6 @@
       <li>Learn back‑end frameworks (Node.js)</li>
       <li>Build full‑stack projects to showcase my skills and create new product for my company</li>
     </ul>
-  </section>
-
-  <section id="message" class="hidden p-6">
-    <h2 class="text-2xl font-bold">Message Me</h2>
-    <form id="messageForm" class="space-y-2">
-      <input id="name" placeholder="Name" class="border p-2 w-full" />
-      <input id="email" placeholder="Email" class="border p-2 w-full" />
-      <textarea id="msg" placeholder="Message" class="border p-2 w-full"></textarea>
-      <button id="submitBtn" class="bg-cyan-500 text-white px-4 py-2">Send</button>
-    </form>
-    <div id="outputBox" class="hidden mt-4 border p-2">
-      <p><b>Name:</b> <span id="outName">-</span></p>
-      <p><b>Email:</b> <span id="outEmail">-</span></p>
-      <p><b>Message:</b> <span id="outMsg">-</span></p>
-    </div>
   </section>
 
   <footer id="footer" class="hidden text-center p-4 text-sm text-slate-600">
